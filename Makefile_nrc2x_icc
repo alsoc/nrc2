@@ -1,0 +1,65 @@
+# ------------------ #
+# -- NRC Makefile -- #
+# ------------------ #
+
+# Copyright (c) 2000-2007 Lionel Lacassagne
+# with a little help of Stephane Piskorski and Joel Falcou
+
+# -- Lile list ----------
+FILE = nralloc1.c, nralloc2.c, nralloc2x.c, nrarith0.c, nrarith1.c, nrarith2.c, nrarith2x.c, nrbool1.c, nrbool2.c,  nrhisto.c, nrio0.c, nrio1.c, nrio1x.c, nrio2.c, nrio2x.c, nrkernel.c, nrlinalg.c, nrlut.c, nrmem1.c, nrmem1x.c, nrmem2.c, nrmem2x.c, nrset1.c, nrset2.c, nrset2x.c, nrsort1.c, nrsort2.c, nrwrap1.c, nrwrap2.c
+
+
+# -- Paths ----------
+SRC_PATH = src
+OBJ_PATH = obj
+EXE_PATH = exe
+LIB_PATH = lib
+INC_PATH = include
+
+# -- OS ----------
+OS = GTODay
+
+# -- Config ----------
+CONFIG = CLI
+
+# -- Macros ----------
+CC = icc
+AR = ar -rc
+
+# -- Flags ----------
+C_DEBUG_FLAGS = -O0
+C_OPTIMISATION_FLAGS = -std=c11 -O3 -fstrict-aliasing
+C_ARCH_FLAGS = -march=native -mtune=native
+C_OS_FLAGS = -D$(OS)
+C_CONFIG_FLAGS = -D$(CONFIG)
+C_INC_FLAGS = -I$(INC_PATH)
+CFLAGS = $(C_DEBUG_FLAGS)        $(C_ARCH_FLAGS) $(C_OS_FLAGS) $(C_INC_FLAGS) $(C_CONFIG_FLAGS)
+CFLAGS = $(C_OPTIMISATION_FLAGS) $(C_ARCH_FLAGS) $(C_OS_FLAGS) $(C_INC_FLAGS)
+
+# -- Final product ----------
+PRODUCT = libnrc2x_$(CC).a
+
+# -- src and obj List ----------
+SRC = $(addprefix ${SRC_PATH}/, $(FILE))
+OBJ = $(addprefix ${OBJ_PATH}/, $(addsuffix .o, $(basename $(FILE))))
+
+# -- Base rules ----------
+$(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+   
+#-----Main rule ----------
+$(LIB_PATH)/$(PRODUCT): $(OBJ)
+	$(AR) $@ $^
+	ranlib $@ 
+
+# -- Other stuff ----------
+depend:
+	makedepend $(CFLAGS) -Y $(SRC)
+
+clean:
+	rm -f $(OBJ)
+	rm -f ${LIB_PATH}/${PRODUCT}
+	
+tar:
+	tar -cvf NRC.tar Makefile src include
+	gzip -9 NRC.tar
