@@ -19,8 +19,6 @@
 #pragma message ("C++")
 extern "C" {
 #endif
-    
-#define VERBOSE_PRAGMA
 
 #ifdef VERBOSE_PRAGMA
 //#pragma message ("- include nrtype.h")

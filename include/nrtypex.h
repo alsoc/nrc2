@@ -20,8 +20,6 @@
 extern "C" {
 #endif
     
-#define VERBOSE_PRAGMA
-
 #ifdef VERBOSE_PRAGMA
 //#pragma message ("- include nrtypeX.h")
 #endif
