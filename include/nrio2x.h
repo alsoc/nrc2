@@ -11,7 +11,7 @@
 #define __NRIO2X_H__
 
 #ifdef __cplusplus
-#pragma message ("C++")
+//#pragma message ("C++")
 extern "C" {
 #endif
     

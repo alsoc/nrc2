@@ -11,7 +11,7 @@
 #define __NRKERNEL_H__
 
 #ifdef __cplusplus
-#pragma message ("C++")
+//#pragma message ("C++")
 extern "C" {
 #endif
     

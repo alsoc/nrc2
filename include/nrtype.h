@@ -16,7 +16,7 @@
 #define _NRTYPE_H_
 
 #ifdef __cplusplus
-#pragma message ("C++")
+//#pragma message ("C++")
 extern "C" {
 #endif
 

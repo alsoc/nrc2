@@ -13,7 +13,7 @@
 
 #ifdef __cplusplus
 #ifdef PRAGMA_VERBOSE
-#pragma message ("C++")
+//#pragma message ("C++")
 #endif
 extern "C" {
 #endif
