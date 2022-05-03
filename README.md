@@ -16,6 +16,6 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="g++" -DCMAKE_CXX_FLAGS
 
 Notice that on Apple M1, if you use AppleClang, you should replace `-march=native` by `-mcpu=apple-m1`.
 
-To include half precision functions you have to add the FP16 option (`-DFP16=ON`) on the `cmake` option.
+To include half precision functions you have to add the FP16 option (`-DFP16=ON`) on the `cmake` command. For now it does not work with intel architecture.
 
 The library is located in `build/lib/`.
