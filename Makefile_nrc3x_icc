@@ -5,9 +5,13 @@
 # Copyright (c) 2000-2007 Lionel Lacassagne
 # with a little help of Stephane Piskorski and Joel Falcou
 
-# -- Lile list ----------
-FILE = nralloc1.c, nralloc2.c, nralloc2x.c, nralloc3.c, nrarith0.c, nrarith1.c, nrarith2.c, nrarith2x.c, nrbool1.c, nrbool2.c,  nrhisto.c, nrio0.c, nrio1.c, nrio1x.c, nrio2.c, nrio2x.c, nrio3.c, nrkernel.c, nrlinalg.c, nrlut.c, nrmem1.c, nrmem1x.c, nrmem2.c, nrmem2x.c, nrset1.c, nrset2.c, nrset2x.c, nrset3.c, nrsort1.c, nrsort2.c, nrwrap1.c, nrwrap2.c
+# -- File list ----------
+FILE = nralloc1.c, nralloc2.c, nralloc2x.c, nralloc3.c, nrarith0.c, nrarith1.c, nrarith2.c, nrarith2x.c, nrbool1.c, nrbool2.c, nrio0.c, nrio1.c, nrio1x.c, nrio2.c, nrio2x.c, nrio3.c, nrkernel.c, nrlinalg.c, nrlut.c, nrmem1.c, nrmem1x.c, nrmem2.c, nrmem2x.c, nrset1.c, nrset2.c, nrset2x.c, nrset3.c, nrsort1.c, nrsort2.c, nrwrap1.c, nrwrap2.c
 
+ifdef FP16
+FILE += nrfp16.c
+$(info Half precision functions added)
+endif
 
 # -- Paths ----------
 SRC_PATH = src

@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.2)
 
 project(nrc)
 
+# CMake options ---------------------------------------------------------------
+# -----------------------------------------------------------------------------
+option(FP16 "Add half precision functions (FP16)" OFF)
 # Define CMake variables ------------------------------------------------------
 # -----------------------------------------------------------------------------
 set(src_dir src)
@@ -10,7 +13,7 @@ set(lib_dir lib)
 
 # Declare source files to compile ---------------------------------------------
 # -----------------------------------------------------------------------------
-set(src_files
+list(APPEND src_files
 	${src_dir}/nralloc1.c
 	${src_dir}/nralloc2.c
 	${src_dir}/nralloc2x.c
@@ -42,6 +45,10 @@ set(src_files
 	${src_dir}/nrsort2.c
 	${src_dir}/nrwrap1.c
 	${src_dir}/nrwrap2.c)
+
+if(FP16)
+	list(APPEND src_files ${src_dir}/nrfp16.c)
+endif()
 
 # Compiler generic options ----------------------------------------------------
 # -----------------------------------------------------------------------------
