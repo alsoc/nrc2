@@ -4,7 +4,13 @@ project(nrc)
 
 # CMake options ---------------------------------------------------------------
 # -----------------------------------------------------------------------------
-option(FP16 "Add half precision functions (FP16)" OFF)
+option(NRC_FP16 "Add half precision functions (FP16)" OFF)
+
+# Print CMake options values --------------------------------------------------
+# -----------------------------------------------------------------------------
+message(STATUS "NRC options: ")
+message(STATUS "  * NRC_FP16: '${NRC_FP16}'")
+
 # Define CMake variables ------------------------------------------------------
 # -----------------------------------------------------------------------------
 set(src_dir src)
@@ -46,7 +52,7 @@ list(APPEND src_files
 	${src_dir}/nrwrap1.c
 	${src_dir}/nrwrap2.c)
 
-if(FP16)
+if(NRC_FP16)
 	list(APPEND src_files ${src_dir}/nrfp16.c)
 endif()
 
@@ -67,8 +73,8 @@ set(LIBRARY_OUTPUT_PATH ${lib_dir})
 add_library(nrc-obj OBJECT ${src_files})
 set_target_properties(nrc-obj PROPERTIES POSITION_INDEPENDENT_CODE ON) # set -fpic
 # library
-add_library(nrc-static-lib STATIC $<TARGET_OBJECTS:nrc-obj>)
-set_target_properties(nrc-static-lib PROPERTIES OUTPUT_NAME nrc POSITION_INDEPENDENT_CODE ON) # set -fpic
+add_library(nrc-slib STATIC $<TARGET_OBJECTS:nrc-obj>)
+set_target_properties(nrc-slib PROPERTIES OUTPUT_NAME nrc POSITION_INDEPENDENT_CODE ON) # set -fpic
 
 # Add definitions -------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -78,11 +84,11 @@ target_compile_definitions(nrc-obj PUBLIC CLI) # C_CONFIG_FLAGS
 # Set include directory -------------------------------------------------------
 # -----------------------------------------------------------------------------
 target_include_directories(nrc-obj PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${inc_dir}/>)
-target_include_directories(nrc-static-lib PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${inc_dir}/>)
+target_include_directories(nrc-slib PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${inc_dir}/>)
 
 # Export target ---------------------------------------------------------------
 # -----------------------------------------------------------------------------
-export(TARGETS nrc-static-lib NAMESPACE nrc:: FILE "${lib_dir}/cmake/nrc/nrc-config.cmake")
+export(TARGETS nrc-slib NAMESPACE nrc:: FILE "${lib_dir}/cmake/nrc/nrc-config.cmake")
 
 
 
