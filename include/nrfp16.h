@@ -16,7 +16,10 @@ extern "C" {
 #endif
 
 // Types
+#ifndef FP16_DEFINED
 typedef __fp16 float16;
+#define FP16_DEFINED
+#endif
 typedef struct { float16 x; float16 y;} complex16;
 typedef struct { float16 r; float16 g; float16 b; } rgbf16;
 typedef struct { float16 b; float16 g; float16 r; } bgrf16;
