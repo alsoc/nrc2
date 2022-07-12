@@ -2557,7 +2557,7 @@ uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
 {
     // only for P5 binary type, not for text type
     
-    int height, width, gris;
+    int height, width/*, gris*/;
     uint8 **m;
     FILE *file;
     
@@ -2584,7 +2584,7 @@ uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    gris   = atoi(readitem(file, buffer));
+    //gris   = atoi(readitem(file, buffer));
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2607,7 +2607,7 @@ void LoadPGM_bmatrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, ui
 {
     // only for P5 binary type, not for text type
     
-    int height, width, gris;
+    int height, width/*, gris*/;
     FILE *file;
     
     char *buffer;
@@ -2632,7 +2632,7 @@ void LoadPGM_bmatrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, ui
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    gris   = atoi(readitem(file, buffer));
+    //gris   = atoi(readitem(file, buffer));
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2652,7 +2652,7 @@ void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint
 {
     // only for P5 binary type, not for text type
     
-    int height, width, gris;
+    int height, width/*, gris*/;
     FILE *file;
     
     char *buffer;
@@ -2678,7 +2678,7 @@ void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    gris   = atoi(readitem(file, buffer));
+    //gris   = atoi(readitem(file, buffer));
     
     for(i=0; i<height; i++) {
         ReadPGMrow(file, width, m[i]);
@@ -2741,7 +2741,7 @@ rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
 {
     /* cette version ne lit plus que le type P6 */
     
-    int height, width, gris;
+    int height, width/*, gris*/;
     rgb8 **m;
     FILE *file;
     //int   format;
@@ -2769,7 +2769,7 @@ rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    gris   = atoi(readitem(file, buffer));
+    //gris   = atoi(readitem(file, buffer));
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2792,7 +2792,7 @@ void LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch,
 {
     /* cette version ne lit plus que le type P6 */
     
-    int height, width, gris;
+    int height, width/*, gris*/;
     FILE *file;
     //int   format;
     
@@ -2819,7 +2819,7 @@ void LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch,
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    gris   = atoi(readitem(file, buffer));
+    //gris   = atoi(readitem(file, buffer));
     
     *nrl = 0;
     *nrh = height - 1;

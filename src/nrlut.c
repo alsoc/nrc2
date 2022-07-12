@@ -281,7 +281,7 @@ void histogram_bmatrix(byte **S, long nrl, long nrh, long ncl, long nch, int32 *
 	for(i=nrl; i<=nrh; i++) {
 		Si = S[i];
 		for(j=ncl; j<=nch; j++) {
-			H[Si[j]]++;
+			H[(int)Si[j]]++;
 		}
 	}
 }
@@ -304,13 +304,13 @@ void histogram_rgb8matrix(rgb8 **S, long nrl, long nrh, long ncl, long nch, rgb3
 /* ------------------------------------------------------------------------------- */
 {
 	int i, j;
-	rgb8 *Si;
+	//rgb8 *Si;
 	int r, b, g;
 	
 	//FUNCTION_NAME("Histogram_rgbmatrix");
 	
 	for(i=nrl; i<=nrh; i++) {
-		Si = S[i];
+		//Si = S[i];
 		//PROGRESS_INFO(function_name, i, nrl, nrh);
 		for(j=ncl; j<=nch; j++) {
 			
