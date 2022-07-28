@@ -2584,7 +2584,7 @@ uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    //gris   = atoi(readitem(file, buffer));
+    /*gris   = atoi(*/readitem(file, buffer)/*)*/;
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2632,7 +2632,7 @@ void LoadPGM_bmatrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, ui
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    //gris   = atoi(readitem(file, buffer));
+    /*gris   = atoi(*/readitem(file, buffer)/*)*/;
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2678,7 +2678,7 @@ void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    //gris   = atoi(readitem(file, buffer));
+    /*gris   = atoi(*/readitem(file, buffer)/*)*/;
     
     for(i=0; i<height; i++) {
         ReadPGMrow(file, width, m[i]);
@@ -2769,7 +2769,7 @@ rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    //gris   = atoi(readitem(file, buffer));
+    /*gris   = atoi(*/readitem(file, buffer)/*)*/;
     
     *nrl = 0;
     *nrh = height - 1;
@@ -2819,7 +2819,7 @@ void LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch,
     
     width  = atoi(readitem(file, buffer));
     height = atoi(readitem(file, buffer));
-    //gris   = atoi(readitem(file, buffer));
+    /*gris   = atoi(*/readitem(file, buffer)/*)*/;
     
     *nrl = 0;
     *nrh = height - 1;
