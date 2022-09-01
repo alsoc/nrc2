@@ -390,28 +390,40 @@ void desinterlace_bmatrix(byte **S, long nrl, long nrh, long ncl, long nch, byte
 		for(i=nrl; i<=nrh; i+=2) {
 			//dup_bvector(S[i+0], ncl, nch, D0[i0++]);
 			//dup_bvector(S[i+1], ncl, nch, D1[i1++]);
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
 		}
 		// epilog
 		if((nrh&1)==0) {
 			//dup_bvector(S[nrh], ncl, nch, D0[i0]);
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
 		}
-		
+
 	} else {
-		
+
 		// nrl is odd
 		for(i=nrl; i<=nrh; i+=2) {
 			//dup_bvector(S[i+0], ncl, nch, D1[i1++]);
 			//dup_bvector(S[i+1], ncl, nch, D0[i0++]);
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
 		}
 		// epilog
 		if((nrh&1)==1) {
 			//dup_bvector(S[nrh], ncl, nch, D1[i1]);
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
 		}
 	}
 }
@@ -421,37 +433,49 @@ void desinterlace_rgb8matrix(rgb8 **S, long nrl, long nrh, long ncl, long nch, r
 {
 	int i, i0, i1;
 	int j;
-	
+
 	i0 = i1 = nrl;
-	
+
 	if((nrl&1)==0) {
-		
+
 		// nrl is even
 		for(i=nrl; i<=nrh; i+=2) {
 			//dup_rgb8vector(S[i+0], ncl, nch, D0[i0++]);
 			//dup_rgb8vector(S[i+1], ncl, nch, D1[i1++]);
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
 		}
 		// epilog
 		if((nrh&1)==0) {
 			//dup_rgb8vector(S[nrh], ncl, nch, D0[i0]);
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
 		}
-		
+
 	} else {
-		
+
 		// nrl is odd
 		for(i=nrl; i<=nrh; i+=2) {
 			//dup_rgb8vector(S[i+0], ncl, nch, D1[i1++]);
 			//dup_rgb8vector(S[i+1], ncl, nch, D0[i0++]);
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
-			for(j=ncl; j<=nch; j++) D0[i0][j] = S[i][j]; i0++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
+			for(j=ncl; j<=nch; j++)
+				D0[i0][j] = S[i][j];
+			i0++;
 		}
 		// epilog
 		if((nrh&1)==1) {
 			//dup_rgb8vector(S[nrh], ncl, nch, D1[i1]);
-			for(j=ncl; j<=nch; j++) D1[i1][j] = S[i][j]; i1++;
+			for(j=ncl; j<=nch; j++)
+				D1[i1][j] = S[i][j];
+			i1++;
 		}
 	}
 }
@@ -462,14 +486,20 @@ void interlace_bmatrix(byte **S0, long nrl, long nrh, long ncl, long nch, byte *
 	// S1 & S2 are supposed to have the same height
 	int i, i0, i1;
 	int j;
-	
+
 	i0 = i1 = nrl;
-	
+
 	for(i=nrl; i<=nrh;) {
 		//dup_bvector(S0[i0++], ncl, nch, D[i++]);
 		//dup_bvector(S1[i1++], ncl, nch, D[i++]);
-		for(j=ncl; j<=nch; j++) D[i][j] = S0[i0][j]; i++; i0++;
-		for(j=ncl; j<=nch; j++) D[i][j] = S0[i1][j]; i++; i1++;
+		for(j=ncl; j<=nch; j++)
+			D[i][j] = S0[i0][j];
+		i++;
+		i0++;
+		for(j=ncl; j<=nch; j++)
+			D[i][j] = S0[i1][j];
+		i++;
+		i1++;
 	}
 }
 /* ---------------------------------------------------------------------------------------------------------- */
@@ -478,14 +508,20 @@ void interlace_rgb8matrix(rgb8 **S0, long nrl, long nrh, long ncl, long nch, rgb
 {
 	int i, i0, i1;
 	int j;
-	
+
 	i0 = i1 = nrl;
-	
+
 	for(i=nrl; i<=nrh;) {
 		//dup_rgb8vector(S0[i0++], ncl, nch, D[i++]);
 		//dup_rgb8vector(S1[i1++], ncl, nch, D[i++]);
-		for(j=ncl; j<=nch; j++) D[i][j] = S0[i0][j]; i++; i0++;
-		for(j=ncl; j<=nch; j++) D[i][j] = S0[i1][j]; i++; i1++;
+		for(j=ncl; j<=nch; j++)
+			D[i][j] = S0[i0][j];
+		i++;
+		i0++;
+		for(j=ncl; j<=nch; j++)
+			D[i][j] = S0[i1][j];
+		i++;
+		i1++;
 	}
 }
 
