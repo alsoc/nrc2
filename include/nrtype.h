@@ -65,13 +65,17 @@ typedef char  byte;
 typedef char  int8;
 typedef short int16;
 typedef int   int32;
+#ifndef OPENCV_CORE_HAL_INTERFACE_H
 typedef long long  int64;
+#endif
     
+#ifndef OPENCV_CORE_HAL_INTERFACE_H
 #ifdef LIBCOMP
 #if defined(myCompiler_ICC) || defined (myCompiler_MSC)
 typedef __int64  int64;
 #else
 //typedef long long  int64;
+#endif
 #endif
 #endif
 
@@ -86,12 +90,18 @@ typedef   signed int sint32;
 typedef unsigned int uint32;
 
 #if defined(myCompiler_ICC) || defined (myCompiler_MSC)
+#ifndef OPENCV_CORE_HAL_INTERFACE_H
 typedef          __int64  int64;
+#endif
 typedef   signed __int64 sint64;
+#ifndef OPENCV_CORE_HAL_INTERFACE_H
 typedef unsigned __int64 uint64;
+#endif
 #else
 typedef   signed long long sint64;
+#ifndef OPENCV_CORE_HAL_INTERFACE_H
 typedef unsigned long long uint64;
+#endif
 #endif
 
 typedef float   float32;
