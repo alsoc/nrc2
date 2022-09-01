@@ -2542,14 +2542,16 @@ PRIVATE void ReadPGMrow(FILE  *file, int width, uint8 *line)
 /* ----------------------------------------------------- */
 {
     // file is already open (in read) and will not be closed at the end
-    fread(&(line[0]), sizeof(uint8), width, file);
+    if (fread(&(line[0]), sizeof(uint8), width, file) != width)
+         nrerror("Can't read a full row");
 }
 /* ------------------------------------------------------- */
 PRIVATE void WritePGMrow(uint8 *line, int width, FILE  *file)
 /* ------------------------------------------------------- */
 {
     // file is already open (in read) and will not be closed at the end
-    fwrite(&(line[0]), sizeof(uint8), width, file);
+    if (fwrite(&(line[0]), sizeof(uint8), width, file) != width)
+        nrerror("Can't write a full row");
 }
 /* --------------------------------------------------------------------------------------- */
 uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch)
@@ -2725,15 +2727,16 @@ PRIVATE void ReadPNMrow(FILE  *file, int width, byte  *line)
 /* ------------------------------------------------------ */
 {
     /* Le fichier est ouvert (en lecture) et ne sera pas ferme a la fin */
-    fread(&(line[0]), sizeof(byte), 3*sizeof(byte)*width, file);
+    if(fread(&(line[0]), sizeof(byte), 3*sizeof(byte)*width, file) != 3*sizeof(byte)*width)
+        nrerror("Can't read a full row");
 }
 /* ------------------------------------------------------- */
 PRIVATE void WritePNMrow(byte  *line, int width, FILE  *file)
 /* ------------------------------------------------------- */
 {
     /* Le fichier est deja ouvert et ne sera pas ferme a la fin */
-    
-    fwrite(&(line[0]), sizeof(byte), 3*sizeof(byte)*width, file);
+    if(fwrite(&(line[0]), sizeof(byte), 3*sizeof(byte)*width, file) != 3*sizeof(byte)*width)
+        nrerror("Can't write a full row");
 }
 /* ------------------------------------------------------------------------------------------ */
 rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch)
