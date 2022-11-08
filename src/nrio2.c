@@ -2604,7 +2604,7 @@ uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     return m;
 }
 /* ----------------------------------------------------------------------------------------------- */
-void LoadPGM_bmatrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, uint8 **m)
+void LoadPGM_ui8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, uint8 **m)
 /* ----------------------------------------------------------------------------------------------- */
 {
     // only for P5 binary type, not for text type
