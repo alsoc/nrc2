@@ -240,6 +240,7 @@ void    LoadPGM_ui8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nc
 void   MLoadPGM_ui8matrix (char *filename, int nrl, int nrh, int ncl, int nch, uint8 **m);
 
 void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, char *filename);
+int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char* filename);
 
 rgb8** LoadPPM_rgb8matrix (char *filename, int *nrl, int *nrh, int *ncl, int *nch);
 void   LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, rgb8 **m);

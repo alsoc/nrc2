@@ -18,6 +18,11 @@
 #include <string.h> /* memcpy */
 //#include <memory.h> // memcpy
 
+// Add PNG support
+#include <png.h> // libpng
+#include <zlib.h> // zlib
+
+
 #include "mypredef.h"
 #include "nrtype.h"
 #include "nrdef.h"
@@ -2718,6 +2723,88 @@ void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, char *file
     /* fermeture du fichier */
     fclose(file);
 }
+// ----------------------------------------------------------------------------------
+int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char* filename) {
+// ----------------------------------------------------------------------------------
+
+    const int MAX_FMT_LEN = 1024;
+    char msg[MAX_FMT_LEN];
+    
+    FILE* file = fopen(filename, "wb");
+    if (!file) {
+	snprintf(msg, MAX_FMT_LEN, "Could not open %s file in SavePNG_ui8matrix\n", filename);
+	nrerror(msg);
+
+	return -1;
+    }
+
+    png_structp png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+    
+    if (!png_ptr) {
+
+	sprintf(msg, "Could not create PNG write structure in SavePNG_ui8matrix\n");
+	nrerror(msg);
+	fclose(file);
+	
+	return -1;
+    }
+
+    png_infop info_ptr = png_create_info_struct(png_ptr);
+    if (!info_ptr) {
+
+	sprintf(msg, "Could not create PNG info structure in SavePNG_ui8matrix\n");
+	nrerror(msg);
+	
+	png_destroy_write_struct(&png_ptr, NULL);
+	fclose(file);
+	
+	return -1;
+    }
+
+    if (setjmp(png_jmpbuf(png_ptr))) {
+
+	sprintf(msg, "Could not set PNG error handler\n");
+	nrerror(msg);
+
+	png_destroy_write_struct(&png_ptr, &info_ptr);
+	fclose(file);
+	
+	return -1;
+    }
+    
+    png_init_io(png_ptr, file);
+
+
+    int width = nch + 1;
+    int height = nrh + 1;
+
+    int color_depth = 8;
+    int color_type = PNG_COLOR_TYPE_GRAY;
+    int interlace_method = PNG_INTERLACE_NONE;
+    int compression_method = PNG_COMPRESSION_TYPE_DEFAULT;
+    int filter_method = PNG_FILTER_TYPE_DEFAULT;
+    
+    
+    png_set_IHDR(png_ptr, info_ptr, width, height, color_depth, color_type, interlace_method,
+		 compression_method, filter_method);
+
+    png_write_info(png_ptr, info_ptr);
+
+    // Copy data from uint8 matrix
+    png_write_image(png_ptr, m);
+
+    png_write_end(png_ptr, info_ptr);
+
+    
+    png_destroy_write_struct(&png_ptr, &info_ptr);
+    
+    fclose(file);
+
+    return 0;
+}
+
+
+
 /* --------------------------- */
 /* -- PNM IO for rgb8matrix -- */
 /* --------------------------- */
