@@ -18,9 +18,16 @@
 #include <string.h> /* memcpy */
 //#include <memory.h> // memcpy
 
+
+#ifdef NRC_USE_PNG
 // Add PNG support
 #include <png.h> // libpng
+#endif // NRC_USE_PNG
+
+
+#ifdef NRC_USE_ZLIB
 #include <zlib.h> // zlib
+#endif // NRC_USE_ZLIB
 
 
 #include "mypredef.h"
@@ -2653,6 +2660,117 @@ void LoadPGM_ui8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, 
     fclose(file);
     free(buffer);
 }
+
+#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
+// -----------------------------------------------------------------------------------
+uint8** LoadPNG_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, int *nch) {
+// -----------------------------------------------------------------------------------
+    const int MAX_FMT_LEN = 1024;
+    char msg[MAX_FMT_LEN];
+    
+    FILE* file = fopen(filename, "r");
+
+    png_structp png_ptr = NULL;
+    png_infop info_ptr = NULL;
+    png_infop end_info = NULL;
+
+    uint8** mat = NULL;
+    
+    if (!file){
+	snprintf(msg, MAX_FMT_LEN, "Could not open %s file in %s\n", filename, __FUNCTION__);
+	nrerror(msg);
+
+	return NULL;
+    }
+
+    // Check if the file is a PNG file
+#define PNG_HEADER_SIZE (8)
+    unsigned char header[PNG_HEADER_SIZE];
+    
+    fread(header, 1, PNG_HEADER_SIZE, file);
+    int is_png = !png_sig_cmp(header, 0, PNG_HEADER_SIZE);
+    if (!is_png) {
+	snprintf(msg, MAX_FMT_LEN, "Could not read %s in %s, not a PNG file\n", filename, __FUNCTION__);
+	
+	nrerror(msg);
+	fclose(file);
+
+	return NULL;
+    }
+    
+    png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+
+    if (!png_ptr) {
+	snprintf(msg, MAX_FMT_LEN, "Could not create PNG read struct in %s\n", __FUNCTION__);
+
+	nrerror(msg);
+	fclose(file);
+
+	return NULL;
+    }
+
+    info_ptr = png_create_info_struct(png_ptr);
+    if (!info_ptr) {
+	snprintf(msg, MAX_FMT_LEN, "Could not create PNG info structure in %s\n", __FUNCTION__);
+	nrerror(msg);
+	
+	goto clean;
+    }
+
+    end_info = png_create_info_struct(png_ptr);
+    if (!end_info) {
+	snprintf(msg, MAX_FMT_LEN, "Could not create PNG end info struct in %s\n", __FUNCTION__);
+	nrerror(msg);
+	
+	goto clean;
+    }
+    
+
+    if (setjmp(png_jmpbuf(png_ptr))) {
+	snprintf(msg, MAX_FMT_LEN, "Could not set PNG error handler in %s\n", __FUNCTION__);
+	nrerror(msg);
+	
+	goto clean;
+    }
+
+    png_init_io(png_ptr, file);
+    png_set_sig_bytes(png_ptr, PNG_HEADER_SIZE);
+
+    png_read_png(png_ptr, info_ptr, 0, NULL);
+
+
+    int bit_depth = png_get_bit_depth(png_ptr, info_ptr);
+    if (bit_depth != 1) {
+	snprintf(msg, MAX_FMT_LEN, "Image %s is not 8-bits grayscale (%d)", filename, bit_depth);
+	nrerror(msg);
+
+	goto clean;
+    }
+    
+    uint8** row_pointers = png_get_rows(png_ptr, info_ptr);
+
+    int width = png_get_image_width(png_ptr, info_ptr);
+    int height = png_get_image_height(png_ptr, info_ptr);
+
+    *nrl = 0;
+    *nrh = height - 1;
+    *ncl = 0;
+    *nch = width - 1;
+    
+    mat = ui8matrix(0, width - 1, 0, height - 1);
+
+    for (int row = 0; row < height; row++) {
+	memcpy(mat[row], row_pointers[row], width);
+    }
+    
+  clean:    
+    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+    fclose(file);
+    
+    return mat;
+}
+#endif // NRC_USE_PNG && NRC_USE_ZLIB
+
 // -----------------------------------------------------------------------------------
 void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint8 **m)
 // -----------------------------------------------------------------------------------
@@ -2723,6 +2841,8 @@ void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, char *file
     /* fermeture du fichier */
     fclose(file);
 }
+
+#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
 // ----------------------------------------------------------------------------------
 int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char* filename) {
 // ----------------------------------------------------------------------------------
@@ -2731,6 +2851,10 @@ int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char*
     char msg[MAX_FMT_LEN];
     
     FILE* file = fopen(filename, "wb");
+    
+    png_structp png_ptr = NULL;
+    png_infop info_ptr = NULL;
+    
     if (!file) {
 	snprintf(msg, MAX_FMT_LEN, "Could not open %s file in SavePNG_ui8matrix\n", filename);
 	nrerror(msg);
@@ -2738,7 +2862,7 @@ int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char*
 	return -1;
     }
 
-    png_structp png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+    png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
     
     if (!png_ptr) {
 
@@ -2749,7 +2873,7 @@ int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char*
 	return -1;
     }
 
-    png_infop info_ptr = png_create_info_struct(png_ptr);
+    info_ptr = png_create_info_struct(png_ptr);
     if (!info_ptr) {
 
 	sprintf(msg, "Could not create PNG info structure in SavePNG_ui8matrix\n");
@@ -2802,7 +2926,7 @@ int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char*
 
     return 0;
 }
-
+#endif // NRC_USE_PNG && NRC_USE_ZLIB
 
 
 /* --------------------------- */

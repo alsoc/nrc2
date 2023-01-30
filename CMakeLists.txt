@@ -81,6 +81,34 @@ set_target_properties(nrc-slib PROPERTIES OUTPUT_NAME nrc POSITION_INDEPENDENT_C
 target_compile_definitions(nrc-obj PUBLIC GTODay) # C_OS_FLAGS
 target_compile_definitions(nrc-obj PUBLIC CLI) # C_CONFIG_FLAGS
 
+
+# Check for optional libraries ------------------------------------------------
+# -----------------------------------------------------------------------------
+find_package(PNG)
+if (PNG_FOUND)
+  message("libpng found")
+  include_directories(${PNG_INCLUDE_DIRS})
+
+  target_link_libraries(nrc-obj PUBLIC ${PNG_LIBRARIES})
+  target_link_libraries(nrc-slib PUBLIC ${PNG_LIBRARIES})
+
+  target_compile_definitions(nrc-obj PUBLIC NRC_USE_PNG=1)
+  target_compile_definitions(nrc-obj PUBLIC NRC_USE_PNG=1)
+endif()
+
+find_package(ZLIB)
+if (ZLIB_FOUND)
+  message("zlib found")
+  include_directories(${ZLIB_INCLUDE_DIRS})
+
+  target_link_libraries(nrc-obj PUBLIC ${ZLIB_LIBRARIES})
+  target_link_libraries(nrc-slib PUBLIC ${ZLIB_LIBRARIES})
+
+  target_compile_definitions(nrc-obj PUBLIC NRC_USE_ZLIB=1)
+  target_compile_definitions(nrc-obj PUBLIC NRC_USE_ZLIB=1)
+endif()
+
+
 # Set include directory -------------------------------------------------------
 # -----------------------------------------------------------------------------
 target_include_directories(nrc-obj PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${inc_dir}/>)
@@ -89,6 +117,3 @@ target_include_directories(nrc-slib PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOU
 # Export target ---------------------------------------------------------------
 # -----------------------------------------------------------------------------
 export(TARGETS nrc-slib NAMESPACE nrc:: FILE "${lib_dir}/cmake/nrc/nrc-config.cmake")
-
-
-
