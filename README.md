@@ -1,5 +1,10 @@
 # NRC
 
+## Dependencies
+
+Optional: `libpng` and `zlib` for loading and saving grayscale images (`LoadPNG_ui8matrix()` and `SavePNG_ui8matrix()` functions)
+
+
 ## How to compile
 
 ```bash
