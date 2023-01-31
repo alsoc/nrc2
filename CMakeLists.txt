@@ -86,26 +86,24 @@ target_compile_definitions(nrc-obj PUBLIC CLI) # C_CONFIG_FLAGS
 # -----------------------------------------------------------------------------
 find_package(PNG)
 if (PNG_FOUND)
-  message("libpng found")
   include_directories(${PNG_INCLUDE_DIRS})
 
   target_link_libraries(nrc-obj PUBLIC ${PNG_LIBRARIES})
   target_link_libraries(nrc-slib PUBLIC ${PNG_LIBRARIES})
 
   target_compile_definitions(nrc-obj PUBLIC NRC_USE_PNG=1)
-  target_compile_definitions(nrc-obj PUBLIC NRC_USE_PNG=1)
+  target_compile_definitions(nrc-slib PUBLIC NRC_USE_PNG=1)
 endif()
 
 find_package(ZLIB)
 if (ZLIB_FOUND)
-  message("zlib found")
   include_directories(${ZLIB_INCLUDE_DIRS})
 
   target_link_libraries(nrc-obj PUBLIC ${ZLIB_LIBRARIES})
   target_link_libraries(nrc-slib PUBLIC ${ZLIB_LIBRARIES})
 
   target_compile_definitions(nrc-obj PUBLIC NRC_USE_ZLIB=1)
-  target_compile_definitions(nrc-obj PUBLIC NRC_USE_ZLIB=1)
+  target_compile_definitions(nrc-slib PUBLIC NRC_USE_ZLIB=1)
 endif()
 
 

@@ -239,15 +239,15 @@ uint8** LoadPGM_ui8matrix (char *filename, int *nrl, int *nrh, int *ncl, int *nc
 void    LoadPGM_ui8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, uint8 **m);
 void   MLoadPGM_ui8matrix (char *filename, int nrl, int nrh, int ncl, int nch, uint8 **m);
 
-//#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
+#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
 uint8** LoadPNG_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, int *nch);
-//#endif // NRC_USE_PNG && NRC_USE_ZLIB
+#endif // NRC_USE_PNG && NRC_USE_ZLIB
 
 void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, char *filename);
 
-//#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
+#if defined(NRC_USE_PNG) && defined(NRC_USE_ZLIB)
 int SavePNG_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char* filename);
-//#endif // NRC_USE_PNG && NRC_USE_ZLIB
+#endif // NRC_USE_PNG && NRC_USE_ZLIB
 
 
 rgb8** LoadPPM_rgb8matrix (char *filename, int *nrl, int *nrh, int *ncl, int *nch);
