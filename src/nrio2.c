@@ -2736,11 +2736,14 @@ uint8** LoadPNG_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, in
     png_init_io(png_ptr, file);
     png_set_sig_bytes(png_ptr, PNG_HEADER_SIZE);
 
-    png_read_png(png_ptr, info_ptr, 0, NULL);
+    // Ensure 8-bits per pixel
+    const int transforms = PNG_TRANSFORM_SCALE_16 | PNG_TRANSFORM_PACKING;
+    
+    png_read_png(png_ptr, info_ptr, transforms, NULL);
 
 
     int bit_depth = png_get_bit_depth(png_ptr, info_ptr);
-    if (bit_depth != 1) {
+    if (bit_depth != 8) {
 	snprintf(msg, MAX_FMT_LEN, "Image %s is not 8-bits grayscale (%d)", filename, bit_depth);
 	nrerror(msg);
 
@@ -2757,7 +2760,7 @@ uint8** LoadPNG_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, in
     *ncl = 0;
     *nch = width - 1;
     
-    mat = ui8matrix(0, width - 1, 0, height - 1);
+    mat = ui8matrix(*nrl, *nrh, *ncl, *nch);
 
     for (int row = 0; row < height; row++) {
 	memcpy(mat[row], row_pointers[row], width);
