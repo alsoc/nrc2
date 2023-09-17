@@ -49,7 +49,7 @@
  */
 
 /* -------------------------------------------------------------------------------------------------------- */
-void display_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* -------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -64,7 +64,7 @@ void display_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, char *for
     }
 }
 /* -------------------------------------------------------------------------------------------------------- */
-void display_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* -------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -79,7 +79,7 @@ void display_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, char *for
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -94,7 +94,7 @@ void display_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -109,7 +109,7 @@ void display_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -124,7 +124,7 @@ void display_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -139,7 +139,7 @@ void display_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -154,7 +154,7 @@ void display_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* --------------------------------------------------------------------------------------------------------- */
-void display_i64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_i64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -169,7 +169,7 @@ void display_i64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *fo
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -184,7 +184,7 @@ void display_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -199,7 +199,7 @@ void display_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* -------------------------------------------------------------------------------------------------------- */
-void display_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* -------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -214,7 +214,7 @@ void display_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *for
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -235,7 +235,7 @@ void display_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *f
  */
 
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -250,7 +250,7 @@ void display_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -265,7 +265,7 @@ void display_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void display_si16matrix_T(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si16matrix_T(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long i,j;
@@ -280,7 +280,7 @@ void display_si16matrix_T(sint16 **m,long nrl,long nrh,long ncl, long nch, char 
     }
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void display_ui16matrix_T(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui16matrix_T(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long i,j;
@@ -295,82 +295,7 @@ void display_ui16matrix_T(uint16 **m,long nrl,long nrh,long ncl, long nch, char 
     }
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void display_si32matrix_T(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
-/* ------------------------------------------------------------------------------------------------------------ */
-{
-    long i,j;
-    
-    if(name != NULL) puts(name);
-    
-    for(j=ncl; j<=nch; j++) {
-        for(i=nrl; i<=nrh; i++) {           
-            printf(format, m[i][j]);
-        }
-        putchar('\n');
-    }
-}
-/* ---------------------------------------------------------------------------------------------------------- */
-void display_ui32matrix_T(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
-/* ---------------------------------------------------------------------------------------------------------- */
-{
-    long i,j;
-    
-    if(name != NULL) puts(name);
-    
-    for(j=ncl; j<=nch; j++) {
-        for(i=nrl; i<=nrh; i++) {           
-            printf(format, m[i][j]);
-        }
-        putchar('\n');
-    }
-}
-/* ------------------------------------------------------------------------------------------------------------ */
-void display_si64matrix_T(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
-/* ------------------------------------------------------------------------------------------------------------ */
-{
-    long i,j;
-    
-    if(name != NULL) puts(name);
-    
-    for(j=ncl; j<=nch; j++) {
-        for(i=nrl; i<=nrh; i++) {           
-            printf(format, m[i][j]);
-        }
-        putchar('\n');
-    }
-}
-/* ------------------------------------------------------------------------------------------------------------ */
-void display_ui64matrix_T(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
-/* ------------------------------------------------------------------------------------------------------------ */
-{
-    long i,j;
-    
-    if(name != NULL) puts(name);
-    
-    for(j=ncl; j<=nch; j++) {
-        for(i=nrl; i<=nrh; i++) {           
-            printf(format, m[i][j]);
-        }
-        putchar('\n');
-    }
-}
-/* ------------------------------------------------------------------------------------------------------------ */
-void display_f32matrix_T(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
-/* ------------------------------------------------------------------------------------------------------------ */
-{
-    long i,j;
-    
-    if(name != NULL) puts(name);
-    
-    for(j=ncl; j<=nch; j++) {
-        for(i=nrl; i<=nrh; i++) {           
-            printf(format, m[i][j]);
-        }
-        putchar('\n');
-    }
-}
-/* ------------------------------------------------------------------------------------------------------------ */
-void display_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si32matrix_T(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long i,j;
@@ -385,7 +310,82 @@ void display_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, char 
     }
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui32matrix_T(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
+/* ---------------------------------------------------------------------------------------------------------- */
+{
+    long i,j;
+    
+    if(name != NULL) puts(name);
+    
+    for(j=ncl; j<=nch; j++) {
+        for(i=nrl; i<=nrh; i++) {           
+            printf(format, m[i][j]);
+        }
+        putchar('\n');
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+void display_si64matrix_T(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
+/* ------------------------------------------------------------------------------------------------------------ */
+{
+    long i,j;
+    
+    if(name != NULL) puts(name);
+    
+    for(j=ncl; j<=nch; j++) {
+        for(i=nrl; i<=nrh; i++) {           
+            printf(format, m[i][j]);
+        }
+        putchar('\n');
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+void display_ui64matrix_T(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
+/* ------------------------------------------------------------------------------------------------------------ */
+{
+    long i,j;
+    
+    if(name != NULL) puts(name);
+    
+    for(j=ncl; j<=nch; j++) {
+        for(i=nrl; i<=nrh; i++) {           
+            printf(format, m[i][j]);
+        }
+        putchar('\n');
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+void display_f32matrix_T(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
+/* ------------------------------------------------------------------------------------------------------------ */
+{
+    long i,j;
+    
+    if(name != NULL) puts(name);
+    
+    for(j=ncl; j<=nch; j++) {
+        for(i=nrl; i<=nrh; i++) {           
+            printf(format, m[i][j]);
+        }
+        putchar('\n');
+    }
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+void display_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
+/* ------------------------------------------------------------------------------------------------------------ */
+{
+    long i,j;
+    
+    if(name != NULL) puts(name);
+    
+    for(j=ncl; j<=nch; j++) {
+        for(i=nrl; i<=nrh; i++) {           
+            printf(format, m[i][j]);
+        }
+        putchar('\n');
+    }
+}
+/* ---------------------------------------------------------------------------------------------------------- */
+void display_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     long i,j;
@@ -400,7 +400,7 @@ void display_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *f
     }
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void display_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long i,j;
@@ -422,7 +422,7 @@ void display_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char 
  */
 
 /* --------------------------------------------------------------------------------------------------------------- */
-void display_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -445,7 +445,7 @@ void display_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, ch
     putchar('\n');
 }
 /* --------------------------------------------------------------------------------------------------------------- */
-void display_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -468,7 +468,7 @@ void display_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, ch
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -491,7 +491,7 @@ void display_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -514,7 +514,7 @@ void display_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -537,7 +537,7 @@ void display_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -560,7 +560,7 @@ void display_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -583,7 +583,7 @@ void display_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -606,7 +606,7 @@ void display_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -629,7 +629,7 @@ void display_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -652,7 +652,7 @@ void display_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, 
     putchar('\n');
 }
 /* --------------------------------------------------------------------------------------------------------------- */
-void display_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -675,7 +675,7 @@ void display_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, ch
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_rgbx8matrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_rgbx8matrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -705,7 +705,7 @@ void display_rgbx8matrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, 
  */
 
 /* ---------------------------------------------------------------------------------------------------------- */
-void write_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     int  i,j;
@@ -726,7 +726,7 @@ void write_si8matrix(sint8 **m,long nrl,long nrh,long ncl, long nch, char *forma
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void write_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     int  i,j;
@@ -747,7 +747,7 @@ void write_ui8matrix(uint8 **m,long nrl,long nrh,long ncl, long nch, char *forma
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int  i,j;
@@ -768,7 +768,7 @@ void write_si16matrix(sint16 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -789,7 +789,7 @@ void write_ui16matrix(uint16 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -810,7 +810,7 @@ void write_si32matrix(sint32 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -831,7 +831,7 @@ void write_ui32matrix(uint32 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -852,7 +852,7 @@ void write_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -873,7 +873,7 @@ void write_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -894,7 +894,7 @@ void write_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -915,7 +915,7 @@ void write_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void write_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -936,7 +936,7 @@ void write_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *forma
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     int i,j;
@@ -964,7 +964,7 @@ void write_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *for
  */
 
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long  i,j;
@@ -985,7 +985,7 @@ void write_si8matrix_T(sint8 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long  i,j;
@@ -1006,7 +1006,7 @@ void write_ui8matrix_T(uint8 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_si32matrix_T(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si32matrix_T(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1027,7 +1027,7 @@ void write_si32matrix_T(sint32 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_ui32matrix_T(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui32matrix_T(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1048,7 +1048,7 @@ void write_ui32matrix_T(uint32 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_si64matrix_T(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si64matrix_T(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1069,7 +1069,7 @@ void write_si64matrix_T(sint64 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_ui64matrix_T(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui64matrix_T(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1090,7 +1090,7 @@ void write_ui64matrix_T(uint64 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_f32matrix_T(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f32matrix_T(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1111,7 +1111,7 @@ void write_f32matrix_T(float32 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1132,7 +1132,7 @@ void write_f64matrix_T(float64 **m,long nrl,long nrh,long ncl, long nch, char *f
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
     long  i,j;
@@ -1153,7 +1153,7 @@ void write_rgb8matrix_T(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *for
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------- */
-void write_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------- */
 {
     long  i,j;
@@ -1181,7 +1181,7 @@ void write_rgbx8matrix_T(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *f
  */
 
 /* ----------------------------------------------------------------------------------------------------------------- */
-void write_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1210,7 +1210,7 @@ void write_si8matrix_number(sint8 **m,long nrl,long nrh,long ncl, long nch, char
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void write_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1239,7 +1239,7 @@ void write_ui8matrix_number(uint8 **m,long nrl,long nrh,long ncl, long nch, char
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1268,7 +1268,7 @@ void write_si16matrix_number(sint16 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1297,7 +1297,7 @@ void write_ui16matrix_number(uint16 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1326,7 +1326,7 @@ void write_si32matrix_number(sint32 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1355,7 +1355,7 @@ void write_ui32matrix_number(uint32 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1384,7 +1384,7 @@ void write_si64matrix_number(sint64 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1413,7 +1413,7 @@ void write_ui64matrix_number(uint64 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1442,7 +1442,7 @@ void write_f32matrix_number(float32 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1471,7 +1471,7 @@ void write_f64matrix_number(float64 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void write_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1500,7 +1500,7 @@ void write_rgb8matrix_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, char
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_rgb8xmatrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgb8xmatrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1534,7 +1534,7 @@ void write_rgb8xmatrix_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, ch
  * -----------------------------
  */
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_si8matrix_T_number(sint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si8matrix_T_number(sint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1562,7 +1562,7 @@ void write_si8matrix_T_number(sint8 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_ui8matrix_T_number(uint8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui8matrix_T_number(uint8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1591,7 +1591,7 @@ void write_ui8matrix_T_number(uint8 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_si16matrix_T_number(sint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si16matrix_T_number(sint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1619,7 +1619,7 @@ void write_si16matrix_T_number(sint16 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_ui16matrix_T_number(uint16 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui16matrix_T_number(uint16 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1647,7 +1647,7 @@ void write_ui16matrix_T_number(uint16 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_si32matrix_T_number(sint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si32matrix_T_number(sint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1676,7 +1676,7 @@ void write_si32matrix_T_number(sint32 **m,long nrl,long nrh,long ncl, long nch, 
 }
 
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_ui32matrix_T_number(uint32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui32matrix_T_number(uint32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1705,7 +1705,7 @@ void write_ui32matrix_T_number(uint32 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_si64matrix_T_number(sint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_si64matrix_T_number(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1733,7 +1733,7 @@ void write_si64matrix_T_number(sint64 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_ui64matrix_T_number(uint64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_ui64matrix_T_number(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1762,7 +1762,7 @@ void write_ui64matrix_T_number(uint64 **m,long nrl,long nrh,long ncl, long nch, 
 }
 
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_f32matrix_T_number(float32 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f32matrix_T_number(float32 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1790,7 +1790,7 @@ void write_f32matrix_T_number(float32 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_f64matrix_T_number(float64 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_f64matrix_T_number(float64 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1818,7 +1818,7 @@ void write_f64matrix_T_number(float64 **m,long nrl,long nrh,long ncl, long nch, 
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void write_rgb8matrix_T_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgb8matrix_T_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1846,7 +1846,7 @@ void write_rgb8matrix_T_number(rgb8 **m,long nrl,long nrh,long ncl, long nch, ch
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------------------------------- */
-void write_rgbx8matrix_T_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *format, char *filename)
+void write_rgbx8matrix_T_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *format, const char *filename)
 /* --------------------------------------------------------------------------------------------------------------------- */
 {
     int i,j;
@@ -1880,7 +1880,7 @@ void write_rgbx8matrix_T_number(rgbx8 **m,long nrl,long nrh,long ncl, long nch, 
  */
 
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_si8matrix(sint8 **m,long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_si8matrix(sint8 **m,long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1895,7 +1895,7 @@ void fwrite_si8matrix(sint8 **m,long nrl, long nrh, long ncl, long nch, char *fi
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------ */
-void fwrite_ui8matrix(uint8 **m, long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_ui8matrix(uint8 **m, long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------ */
 {
     long  i, ncol = nch-ncl+1;
@@ -1910,7 +1910,7 @@ void fwrite_ui8matrix(uint8 **m, long nrl, long nrh, long ncl, long nch, char *f
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------- */
-void fwrite_si16matrix(sint16 **m,long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_si16matrix(sint16 **m,long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1926,7 +1926,7 @@ void fwrite_si16matrix(sint16 **m,long nrl, long nrh, long ncl, long nch, char *
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------- */
-void fwrite_ui16matrix(uint16 **m,long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_ui16matrix(uint16 **m,long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1942,7 +1942,7 @@ void fwrite_ui16matrix(uint16 **m,long nrl, long nrh, long ncl, long nch, char *
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------- */
-void fwrite_si32matrix(sint32 **m,long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_si32matrix(sint32 **m,long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1958,7 +1958,7 @@ void fwrite_si32matrix(sint32 **m,long nrl, long nrh, long ncl, long nch, char *
     fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------- */
-void fwrite_ui32matrix(uint32 **m,long nrl, long nrh, long ncl, long nch, char *filename)
+void fwrite_ui32matrix(uint32 **m,long nrl, long nrh, long ncl, long nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1974,7 +1974,7 @@ void fwrite_ui32matrix(uint32 **m,long nrl, long nrh, long ncl, long nch, char *
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -1990,7 +1990,7 @@ void fwrite_si64matrix(sint64 **m,long nrl,long nrh,long ncl, long nch, char *fi
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -2006,7 +2006,7 @@ void fwrite_ui64matrix(uint64 **m,long nrl,long nrh,long ncl, long nch, char *fi
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -2021,7 +2021,7 @@ void fwrite_f32matrix(float32 **m,long nrl,long nrh,long ncl, long nch, char *fi
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -2036,7 +2036,7 @@ void fwrite_f64matrix(float64 **m,long nrl,long nrh,long ncl, long nch, char *fi
     fclose(f);
 }
 /* --------------------------------------------------------------------------------------------- */
-void fwrite_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* --------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -2051,7 +2051,7 @@ void fwrite_rgb8matrix(rgb8 **m,long nrl,long nrh,long ncl, long nch, char *file
     fclose(f);
 }
 /* ----------------------------------------------------------------------------------------------- */
-void fwrite_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *filename)
+void fwrite_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, const char *filename)
 /* ----------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1;
@@ -2073,7 +2073,7 @@ void fwrite_rgbx8matrix(rgbx8 **m,long nrl,long nrh,long ncl, long nch, char *fi
  */
 
 /* -------------------------------------------------------------------------------------------- */
-void fread_si8matrix(char *filename, sint8 **m,long nrl,long nrh,long ncl, long nch)
+void fread_si8matrix(const char *filename, sint8 **m,long nrl,long nrh,long ncl, long nch)
 /* -------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2089,7 +2089,7 @@ void fread_si8matrix(char *filename, sint8 **m,long nrl,long nrh,long ncl, long 
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------- */
-void fread_ui8matrix(char *filename, uint8 **m,long nrl,long nrh,long ncl, long nch)
+void fread_ui8matrix(const char *filename, uint8 **m,long nrl,long nrh,long ncl, long nch)
 /* -------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2105,7 +2105,7 @@ void fread_ui8matrix(char *filename, uint8 **m,long nrl,long nrh,long ncl, long 
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_si32matrix(char *filename, sint32 **m,long nrl,long nrh,long ncl, long nch)
+void fread_si32matrix(const char *filename, sint32 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2122,7 +2122,7 @@ void fread_si32matrix(char *filename, sint32 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_ui32matrix(char *filename, uint32 **m,long nrl,long nrh,long ncl, long nch)
+void fread_ui32matrix(const char *filename, uint32 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2139,7 +2139,7 @@ void fread_ui32matrix(char *filename, uint32 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_si64matrix(char *filename, sint64 **m,long nrl,long nrh,long ncl, long nch)
+void fread_si64matrix(const char *filename, sint64 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2156,7 +2156,7 @@ void fread_si64matrix(char *filename, sint64 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_ui64matrix(char *filename, uint64 **m,long nrl,long nrh,long ncl, long nch)
+void fread_ui64matrix(const char *filename, uint64 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2173,7 +2173,7 @@ void fread_ui64matrix(char *filename, uint64 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_f32matrix(char *filename, float32 **m,long nrl,long nrh,long ncl, long nch)
+void fread_f32matrix(const char *filename, float32 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2189,7 +2189,7 @@ void fread_f32matrix(char *filename, float32 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_f64matrix(char *filename, float64 **m,long nrl,long nrh,long ncl, long nch)
+void fread_f64matrix(const char *filename, float64 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2205,7 +2205,7 @@ void fread_f64matrix(char *filename, float64 **m,long nrl,long nrh,long ncl, lon
     fclose(f);
 }
 /* -------------------------------------------------------------------------------------------- */
-void fread_rgb8matrix(char *filename, rgb8 **m,long nrl,long nrh,long ncl, long nch)
+void fread_rgb8matrix(const char *filename, rgb8 **m,long nrl,long nrh,long ncl, long nch)
 /* -------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2221,7 +2221,7 @@ void fread_rgb8matrix(char *filename, rgb8 **m,long nrl,long nrh,long ncl, long 
     fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------- */
-void fread_rgbx8matrix(char *filename, rgbx8 **m,long nrl,long nrh,long ncl, long nch)
+void fread_rgbx8matrix(const char *filename, rgbx8 **m,long nrl,long nrh,long ncl, long nch)
 /* ---------------------------------------------------------------------------------------------- */
 {
     long  i, ncol = nch-ncl+1, nread;
@@ -2244,7 +2244,7 @@ void fread_rgbx8matrix(char *filename, rgbx8 **m,long nrl,long nrh,long ncl, lon
  */
 
 // ------------------------------------------------------------------------------------------------
-void display_si8matrix_positive(sint8 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_si8matrix_positive(sint8 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // ------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2267,7 +2267,7 @@ void display_si8matrix_positive(sint8 **m, int i0, int i1, int j0, int j1, int i
     }    
 }
 // ------------------------------------------------------------------------------------------------
-void display_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // ------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2290,7 +2290,7 @@ void display_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int i
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_si16matrix_positive(sint16 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_si16matrix_positive(sint16 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2313,7 +2313,7 @@ void display_si16matrix_positive(sint16 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2335,7 +2335,7 @@ void display_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_si32matrix_positive(sint32 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_si32matrix_positive(sint32 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2357,7 +2357,7 @@ void display_si32matrix_positive(sint32 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_ui32matrix_positive(uint32 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_ui32matrix_positive(uint32 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2379,7 +2379,7 @@ void display_ui32matrix_positive(uint32 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_si64matrix_positive(sint64 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_si64matrix_positive(sint64 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2401,7 +2401,7 @@ void display_si64matrix_positive(sint64 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void display_ui64matrix_positive(uint64 **m, int i0, int i1, int j0, int j1, int iformat, char *name)
+void display_ui64matrix_positive(uint64 **m, int i0, int i1, int j0, int j1, int iformat, const char *name)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2423,7 +2423,7 @@ void display_ui64matrix_positive(uint64 **m, int i0, int i1, int j0, int j1, int
     }    
 }
 // --------------------------------------------------------------------------------------------------
-void write_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int iformat, char *filename)
+void write_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int iformat, const char *filename)
 // --------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2451,7 +2451,7 @@ void write_ui8matrix_positive(uint8 **m, int i0, int i1, int j0, int j1, int ifo
 }
 
 // ----------------------------------------------------------------------------------------------------
-void write_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int iformat, char *filename)
+void write_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int iformat, const char *filename)
 // ----------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2478,7 +2478,7 @@ void write_ui16matrix_positive(uint16 **m, int i0, int i1, int j0, int j1, int i
     fclose(f);
 }
 // ---------------------------------------------------------------------------------------------------
-void write_ui32matrix_positive(uint32 **m,int i0, int i1, int j0, int j1, int iformat, char *filename)
+void write_ui32matrix_positive(uint32 **m,int i0, int i1, int j0, int j1, int iformat, const char *filename)
 // ---------------------------------------------------------------------------------------------------
 {
     int i, j;
@@ -2566,7 +2566,7 @@ PRIVATE void WritePGMrow(uint8 *line, int width, FILE  *file)
         nrerror("Can't write a full row");
 }
 /* --------------------------------------------------------------------------------------- */
-uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch)
+uint8** LoadPGM_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, int *nch)
 /* --------------------------------------------------------------------------------------- */
 {
     // only for P5 binary type, not for text type
@@ -2616,7 +2616,7 @@ uint8** LoadPGM_ui8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     return m;
 }
 /* ----------------------------------------------------------------------------------------------- */
-void LoadPGM_ui8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, uint8 **m)
+void LoadPGM_ui8matrix2(const char *filename, int *nrl, int *nrh, int *ncl, int *nch, uint8 **m)
 /* ----------------------------------------------------------------------------------------------- */
 {
     // only for P5 binary type, not for text type
@@ -2775,7 +2775,7 @@ uint8** LoadPNG_ui8matrix(const char *filename, int *nrl, int *nrh, int *ncl, in
 #endif // NRC_USE_PNG && NRC_USE_ZLIB
 
 // -----------------------------------------------------------------------------------
-void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint8 **m)
+void MLoadPGM_ui8matrix(const char *filename, int nrl, int nrh, int ncl, int nch, uint8 **m)
 // -----------------------------------------------------------------------------------
 {
     // only for P5 binary type, not for text type
@@ -2816,7 +2816,7 @@ void MLoadPGM_ui8matrix(char *filename, int nrl, int nrh, int ncl, int nch, uint
     free(buffer);
 }
 // ----------------------------------------------------------------------------------
-void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, char *filename)
+void SavePGM_ui8matrix(uint8 **m, int nrl, int nrh, int ncl, int nch, const char *filename)
 // ----------------------------------------------------------------------------------
 {
     int nrow = nrh-nrl+1;
@@ -2953,7 +2953,7 @@ PRIVATE void WritePNMrow(byte  *line, int width, FILE  *file)
         nrerror("Can't write a full row");
 }
 /* ------------------------------------------------------------------------------------------ */
-rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch)
+rgb8** LoadPPM_rgb8matrix(const char *filename, int *nrl, int *nrh, int *ncl, int *nch)
 /* ------------------------------------------------------------------------------------------ */
 {
     /* cette version ne lit plus que le type P6 */
@@ -3004,7 +3004,7 @@ rgb8** LoadPPM_rgb8matrix(char *filename, int *nrl, int *nrh, int *ncl, int *nch
     return m;
 }
 /* -------------------------------------------------------------------------------------------------- */
-void LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch, rgb8 **m)
+void LoadPPM_rgb8matrix2(const char *filename, int *nrl, int *nrh, int *ncl, int *nch, rgb8 **m)
 /* -------------------------------------------------------------------------------------------------- */
 {
     /* cette version ne lit plus que le type P6 */
@@ -3050,7 +3050,7 @@ void LoadPPM_rgb8matrix2(char *filename, int *nrl, int *nrh, int *ncl, int *nch,
     free(buffer);
 }
 /* ------------------------------------------------------------------------------------------------- */
-void SavePPM_rgb8matrix(rgb8 **m, int nrl, int nrh, int ncl, int nch, char *filename)
+void SavePPM_rgb8matrix(rgb8 **m, int nrl, int nrh, int ncl, int nch, const char *filename)
 /* ------------------------------------------------------------------------------------------------- */
 {
     int nrow = nrh-nrl+1;

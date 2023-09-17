@@ -20,7 +20,7 @@
 #include "nrio1x.h"
 
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_bvector_circular(byte *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_bvector_circular(byte *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -30,7 +30,7 @@ void display_bvector_circular(byte *v,long nl,long nh, long c0, long c1, char *f
   for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------- */
-void display_si16vector_circular(sint16 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_si16vector_circular(sint16 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -40,7 +40,7 @@ void display_si16vector_circular(sint16 *v,long nl,long nh, long c0, long c1, ch
   for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* --------------------------------------------------------------------------------------------------------- */
-void display_ui32vector_circular(uint32 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_ui32vector_circular(uint32 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -50,7 +50,7 @@ void display_ui32vector_circular(uint32 *v,long nl,long nh, long c0, long c1, ch
   for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ---------------------------------------------------------------------------------------------------------- */
-void display_f32vector_circular(float32 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_f32vector_circular(float32 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -60,7 +60,7 @@ void display_f32vector_circular(float32 *v,long nl,long nh, long c0, long c1, ch
   for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ------------------------------------------------------------------------------------------------------------ */
-void display_f64vector_circular(float64 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_f64vector_circular(float64 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
   long i, n=nh-nl+1;
@@ -70,7 +70,7 @@ void display_f64vector_circular(float64 *v,long nl,long nh, long c0, long c1, ch
   for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_bvector_circular_number(byte *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_bvector_circular_number(byte *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -89,7 +89,7 @@ void display_bvector_circular_number(byte *v,long nl,long nh, long c0, long c1, 
   putchar('\n');
 }
 /* ------------------------------------------------------------------------------------------------------------------ */
-void display_si16vector_circular_number(sint16 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_si16vector_circular_number(sint16 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------------ */
 {
   long i, n=nh-nl+1;
@@ -100,7 +100,7 @@ void display_si16vector_circular_number(sint16 *v,long nl,long nh, long c0, long
   putchar(' ');  for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ---------------------------------------------------------------------------------------------------------------- */
-void display_ui32vector_circular_number(uint32 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_ui32vector_circular_number(uint32 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -111,7 +111,7 @@ void display_ui32vector_circular_number(uint32 *v,long nl,long nh, long c0, long
   putchar(' '); for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------------------------- */
-void display_f32vector_circular_number(float32 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_f32vector_circular_number(float32 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -122,7 +122,7 @@ void display_f32vector_circular_number(float32 *v,long nl,long nh, long c0, long
   putchar(' ');  for(i=c0; i<=c1; i++) { printf(format, v[i%n+nl]);} putchar('\n');
 }
 /* ------------------------------------------------------------------------------------------------------------------- */
-void display_dvector_circular_number(float64 *v,long nl,long nh, long c0, long c1, char *format, char *name)
+void display_dvector_circular_number(float64 *v,long nl,long nh, long c0, long c1, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------------- */
 {
   long i, n=nh-nl+1;
@@ -134,7 +134,7 @@ void display_dvector_circular_number(float64 *v,long nl,long nh, long c0, long c
 }
 
 /* ------------------------------------------------------------------------------------- */
-void display_bvector_cycle(byte *v,long nl,long nh, char *format, char *name)
+void display_bvector_cycle(byte *v,long nl,long nh, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------- */
 {
   long i;
@@ -163,7 +163,7 @@ void display_bvector_cycle(byte *v,long nl,long nh, char *format, char *name)
   free_ui8vector(displayed, nl, nh);
 }
 /* -------------------------------------------------------------------------------------- */
-void display_si16vector_cycle(sint16 *v,long nl,long nh, char *format, char *name)
+void display_si16vector_cycle(sint16 *v,long nl,long nh, const char *format, const char *name)
 /* -------------------------------------------------------------------------------------- */
 {
   long i;
@@ -192,7 +192,7 @@ void display_si16vector_cycle(sint16 *v,long nl,long nh, char *format, char *nam
   free_ui8vector(displayed, nl, nh);
 }
 /* ---------------------------------------------------------------------------------------- */
-void display_ui16vector_cycle(uint16 *v,long nl,long nh, char *format, char *name)
+void display_ui16vector_cycle(uint16 *v,long nl,long nh, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------- */
 {
   long i;
@@ -225,7 +225,7 @@ void display_ui16vector_cycle(uint16 *v,long nl,long nh, char *format, char *nam
 /* -- write_vector_circular -- */
 /* --------------------------- */
 /* ------------------------------------------------------------------------------------------------------------ */
-void write_bvector_circular(byte *v,long nl,long nh, long c0, long c1, char *format, char *filename)
+void write_bvector_circular(byte *v,long nl,long nh, long c0, long c1, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------ */
 {
   long i, n=nh-nl+1;
@@ -241,7 +241,7 @@ void write_bvector_circular(byte *v,long nl,long nh, long c0, long c1, char *for
 /* --- display_vector_endline1 --- */
 /* ------------------------------- */
 /* ------------------------------------------------------------------------------------------ */
-void display_bvector_endline1(byte *v, long j0, long j1, char *format, char *name)
+void display_bvector_endline1(byte *v, long j0, long j1, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------ */
 {
     if(name != NULL) puts(name);
@@ -253,7 +253,7 @@ void display_bvector_endline1(byte *v, long j0, long j1, char *format, char *nam
     putchar('\n');
 }
 /* --------------------------------------------------------------------------------------------- */
-void display_i16vector_endline1(int16 *v, long j0, long j1, char *format, char *name)
+void display_i16vector_endline1(int16 *v, long j0, long j1, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);
@@ -265,7 +265,7 @@ void display_i16vector_endline1(int16 *v, long j0, long j1, char *format, char *
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------- */
-void display_ui16vector_endline1(uint16 *v, long j0, long j1, char *format, char *name)
+void display_ui16vector_endline1(uint16 *v, long j0, long j1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);
@@ -277,7 +277,7 @@ void display_ui16vector_endline1(uint16 *v, long j0, long j1, char *format, char
     putchar('\n');
 }
 /* --------------------------------------------------------------------------------------------- */
-void display_i32vector_endline1(int32 *v, long j0, long j1, char *format, char *name)
+void display_i32vector_endline1(int32 *v, long j0, long j1, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);
@@ -289,7 +289,7 @@ void display_i32vector_endline1(int32 *v, long j0, long j1, char *format, char *
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------------- */
-void display_ui32vector_endline1(uint32 *v, long j0, long j1, char *format, char *name)
+void display_ui32vector_endline1(uint32 *v, long j0, long j1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);
@@ -301,7 +301,7 @@ void display_ui32vector_endline1(uint32 *v, long j0, long j1, char *format, char
     putchar('\n');
 }
 /* ---------------------------------------------------------------------------------------------- */
-void display_i64vector_endline1(int64 *v,  long j0, long j1, char *format, char *name)
+void display_i64vector_endline1(int64 *v,  long j0, long j1, const char *format, const char *name)
 /* ---------------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);
@@ -313,7 +313,7 @@ void display_i64vector_endline1(int64 *v,  long j0, long j1, char *format, char 
     putchar('\n');
 }
 /* ----------------------------------------------------------------------------------------- */
-void display_ivector_endline1(int *v, long j0, long j1, char *format, char *name)
+void display_ivector_endline1(int *v, long j0, long j1, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------- */
 {
     if(name != NULL) puts(name);

@@ -32,7 +32,7 @@
 /* --- display_cube --- */
 /* -------------------- */
 /* ------------------------------------------------------------------------------------------------------------------------- */
-void display_i8cube(int8 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_i8cube(int8 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -50,7 +50,7 @@ void display_i8cube(int8 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, lo
   }
 }
 /* --------------------------------------------------------------------------------------------------------------------------- */
-void display_i16cube(int16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_i16cube(int16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -68,7 +68,7 @@ void display_i16cube(int16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, 
   }
 }
 /* ----------------------------------------------------------------------------------------------------------------------------- */
-void display_ui16cube(uint16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui16cube(uint16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -86,7 +86,7 @@ void display_ui16cube(uint16 ***c,long ndl, long ndh, long nrl,long nrh,long ncl
   }
 }
 /* --------------------------------------------------------------------------------------------------------------------------- */
-void display_i32cube(int32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_i32cube(int32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -104,7 +104,7 @@ void display_i32cube(int32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, 
   }
 }
 /* ----------------------------------------------------------------------------------------------------------------------------- */
-void display_ui32cube(uint32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_ui32cube(uint32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -122,7 +122,7 @@ void display_ui32cube(uint32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl
   }
 }
 /* --------------------------------------------------------------------------------------------------------------------------- */
-void display_i64cube(int64 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_i64cube(int64 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* --------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -140,7 +140,7 @@ void display_i64cube(int64 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, 
   }
 }
 /* ----------------------------------------------------------------------------------------------------------------------------- */
-void display_f32cube(float32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, char *format, char *name)
+void display_f32cube(float32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl, long nch, const char *format, const char *name)
 /* ----------------------------------------------------------------------------------------------------------------------------- */
 {
   long i,j,k;
@@ -162,7 +162,7 @@ void display_f32cube(float32 ***c,long ndl, long ndh, long nrl,long nrh,long ncl
 /* -- write_cube -- */
 /* ---------------- */
 /* ------------------------------------------------------------------------------------------------------------------------------ */
-void write_i8cube(int8 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_i8cube(int8 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 {
   int i, j, k;
@@ -187,7 +187,7 @@ void write_i8cube(int8 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, l
   fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------------------------- */
-void write_i16cube(int16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_i16cube(int16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -212,7 +212,7 @@ void write_i16cube(int16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl,
   fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
-void write_ui16cube(uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_ui16cube(uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -237,7 +237,7 @@ void write_ui16cube(uint16 ***c, long ndl, long ndh, long nrl, long nrh, long nc
   fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------------------------- */
-void write_i32cube(int32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_i32cube(int32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -262,7 +262,7 @@ void write_i32cube(int32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl,
   fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
-void write_ui32cube(uint32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_ui32cube(uint32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -287,7 +287,7 @@ void write_ui32cube(uint32 ***c, long ndl, long ndh, long nrl, long nrh, long nc
   fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------------------------- */
-void write_i64cube(int64 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_i64cube(int64 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* -------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -312,7 +312,7 @@ void write_i64cube(int64 ***c, long ndl, long ndh, long nrl, long nrh, long ncl,
   fclose(f);
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
-void write_f32cube(float32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *format, char *filename)
+void write_f32cube(float32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *format, const char *filename)
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 {
   int i, j, k;
@@ -341,7 +341,7 @@ void write_f32cube(float32 ***c, long ndl, long ndh, long nrl, long nrh, long nc
 /* -- fread_cube -- */
 /* ---------------- */
 /* ----------------------------------------------------------------------------------------------------------- */
-void fread_i8cube(char *filename, int8 ***c,long ndl,long ndh,long nrl,long nrh,long ncl, long nch)
+void fread_i8cube(const char *filename, int8 ***c,long ndl,long ndh,long nrl,long nrh,long ncl, long nch)
 /* ----------------------------------------------------------------------------------------------------------- */
 {
   long  i, k;
@@ -362,7 +362,7 @@ void fread_i8cube(char *filename, int8 ***c,long ndl,long ndh,long nrl,long nrh,
   fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------- */
-void fread_i16cube(char *filename, int16 ***c,long ndl,long ndh,long nrl,long nrh,long ncl, long nch)
+void fread_i16cube(const char *filename, int16 ***c,long ndl,long ndh,long nrl,long nrh,long ncl, long nch)
 /* ------------------------------------------------------------------------------------------------------------- */
 {
   long  i, k;
@@ -382,7 +382,7 @@ void fread_i16cube(char *filename, int16 ***c,long ndl,long ndh,long nrl,long nr
   fclose(f);
 }
 /* -------------------------------------------------------------------------------------------------------------------- */
-void fread_ui16cube(char *filename, uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch)
+void fread_ui16cube(const char *filename, uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch)
 /* -------------------------------------------------------------------------------------------------------------------- */
 {
   long  i, k;
@@ -403,7 +403,7 @@ void fread_ui16cube(char *filename, uint16 ***c, long ndl, long ndh, long nrl, l
   fclose(f);
 }
 /* ------------------------------------------------------------------------------------------------------------------ */
-void fread_i32cube(char *filename, int32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch)
+void fread_i32cube(const char *filename, int32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch)
 /* ------------------------------------------------------------------------------------------------------------------ */
 {
   long  i, k;
@@ -439,20 +439,20 @@ extern "C" {
 /* --- fread_cube --- */
 /* ------------------ */
 
-void fread_ui32cube(char *filename, uint32  ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
-void fread_i64cube (char *filename, int64   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
-void fread_f32cube (char *filename, float32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
+void fread_ui32cube(const char *filename, uint32  ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
+void fread_i64cube (const char *filename, int64   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
+void fread_f32cube (const char *filename, float32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch);
 
 /* ----------------- */
 /* -- fwrite_cube -- */
 /* ----------------- */
 
-void fwrite_i8cube(int8     ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
-void fwrite_i16cube(int16   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
-void fwrite_ui16cube(uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
-void fwrite_i32cube(int32   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
-void fwrite_ui32cube(uint32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
-void fwrite_i64cube(int64   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, char *filename);
+void fwrite_i8cube(int8     ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
+void fwrite_i16cube(int16   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
+void fwrite_ui16cube(uint16 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
+void fwrite_i32cube(int32   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
+void fwrite_ui32cube(uint32 ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
+void fwrite_i64cube(int64   ***c, long ndl, long ndh, long nrl, long nrh, long ncl, long nch, const char *filename);
 
 #ifdef __cplusplus
 }
