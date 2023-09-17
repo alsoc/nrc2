@@ -19,7 +19,7 @@ extern "C" {
 //#pragma message ("- *** include nrkernel.h ***")
 #endif
 
-void nrerror(char error_text[]);
+void nrerror(const char* format, ...);
 void nrerror0(char error_text[]);    
 void nrerror1(char *format, ...);
     

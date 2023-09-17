@@ -20,7 +20,8 @@
 //#include <stdarg.h> // va_start
 #include <ctype.h> // isdigit
 #include <string.h> // memcpy
-#include <math.h> // fabs
+#include <math.h>  // fabs
+#include <stdarg.h>                    
 // #include <memory.h> // memcpy
 
 #include "mypredef.h"
@@ -84,13 +85,24 @@ void nrerror1(char *format, ...)
 	exit(-1);
      */
 }
+
 /* ------------------------- */
-void nrerror(char error_text[])
+void nrerror(const char* format, ...)
 /* ------------------------- */
 /* Numerical Recipes standard error handler */
 {
-    nrerror0(error_text);
+    va_list args;
+    va_start(args, format);
+
+    fprintf(stderr, "Numerical Recipes run-time error...\n");
+    vfprintf(stderr, format, args);
+    fprintf(stderr, "\n...now exiting to system...\n");    
+
+    va_end(args);
+
+    exit(1);
 }
+
 // --------------------------
 void Error(char *format, ...)
 // --------------------------
