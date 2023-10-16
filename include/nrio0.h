@@ -19,14 +19,32 @@ extern "C" {
 //#pragma message ("- *** include nrio0.h ***")
 #endif
 
-void generate_filename_k_ndigit          (char *filename, int k, int ndigit,                  char *complete_filename);
-void generate_filename_k_ndigit_extension(char *filename, int k, int ndigit, char *extension, char *complete_filename);
+void generate_filename_k_ndigit          (char *filename, int k, int ndigit,                  char *complete_filename, int complete_filename_strlen);
+void generate_filename_k_ndigit_extension(char *filename, int k, int ndigit, char *extension, char *complete_filename, int filename_len);
 
-void generate_path_filename                     (char *path, char *filename,                                            char *complete_filename);
-void generate_path_filename_extension           (char *path, char *filename,                           char *extension, char *complete_filename);
-void generate_path_filename_suffix_extension    (char *path, char *filename, char *suffix,             char *extension, char *complete_filename);
-void generate_path_filename_k_ndigit_extension  (char *path, char *filename, int k, int ndigit,        char *extension, char *complete_filename);
-void generate_path_filename_k_ndigit_l_extension(char *path, char *filename, int k, int ndigit, int l, char *extension, char *complete_filename);
+void generate_path_filename(char *path, char *filename, char *complete_filename,
+                            int complete_filename_strlen);
+
+void generate_path_filename_extension(char *path, char *filename,
+                                      char *extension, char *complete_filename,
+                                      int complete_filename_strlen);
+
+void generate_path_filename_suffix_extension(char *path, char *filename,
+                                             char *suffix, char *extension,
+                                             char *complete_filename,
+                                             int complete_filename_strlen);
+
+void generate_path_filename_k_ndigit_extension(char *path, char *filename,
+                                               int k, int ndigit,
+                                               char *extension,
+                                               char *complete_filename,
+                                               int complete_filename_strlen);
+
+void generate_path_filename_k_ndigit_l_extension(char *path, char *filename,
+                                                 int k, int ndigit, int l,
+                                                 char *extension,
+                                                 char *complete_filename, int complete_filename_strlen);
+
 
 void select_display_positive_parameters(int iformat, char **format, char **str);
 
